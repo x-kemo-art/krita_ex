@@ -16,7 +16,7 @@ defmodule KritaEx do
 
   ## Examples
 
-      iex> KritaEx.extract_png("./test/test.kra", "./tmp/output.png")
+      iex> KritaEx.extract_png("./priv/test.kra", "./tmp/output.png")
       :ok
 
   """

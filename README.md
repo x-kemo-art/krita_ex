@@ -1,4 +1,4 @@
-# KritaEx
+<h1><img align="center" height="60" src="priv/logo.svg"> KritaEx</h3>
 
 [![Hex.pm](https://img.shields.io/hexpm/v/krita_ex.svg)](https://hex.pm/packages/krita_ex) 
 [![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/krita_ex)
