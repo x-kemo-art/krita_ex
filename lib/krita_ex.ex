@@ -18,10 +18,10 @@ defmodule KritaEx do
 
   ## Examples
 
-      iex> KritaEx.extract_png("test/files/test.kra", "tmp/output.png")
+      iex(1)> KritaEx.extract_png("test/files/test.kra", "tmp/output.png")
       :ok
 
-      iex> KritaEx.extract_png("idontexist.kra", "tmp/output.png")
+      iex(2)> KritaEx.extract_png("idontexist.kra", "tmp/output.png")
       {:error, {:failed_read, :enoent}}
 
   """
@@ -104,7 +104,7 @@ defmodule KritaEx do
       iex(1)> KritaEx.valid_kra?("test/files/test.kra")
       true
 
-      iex(1)> KritaEx.valid_kra?("test/files/invalid.kra")
+      iex(2)> KritaEx.valid_kra?("test/files/invalid.kra")
       false
 
   """

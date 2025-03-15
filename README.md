@@ -7,13 +7,13 @@ A module for extracting embedded images from Krita .kra files
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+This package can be installed
 by adding `krita_ex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:krita_ex, "~> 0.1.0"}
+    {:krita_ex, "~> 0.1.1"}
   ]
 end
 ```
@@ -21,14 +21,22 @@ end
 ## Usage
 
 ```elixir
-iex(1)> KritaEx.read_png("./priv/test.kra")
-{:ok,
-<<137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 13, 73, 72, 68, 82, 0, 0, 9, 196,
-  0, 0, 9, 196, 8, 6, 0, 0, 0, 46, 115, 245, 61, 0, 0, 0, 9, 112, 72, 89, 115,
-  0, 0, 46, 35, 0, 0, 46, ...>>}
+iex(1)> KritaEx.extract_png("test/files/test.kra", "tmp/output.png")
+:ok
 ```
 
 ```elixir
-iex(1)> KritaEx.extract_png("./priv/test.kra", "./tmp/output.png")
-:ok
+iex(1)> KritaEx.read_png("test/files/test.kra")
+{:ok,
+  <<137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 13, 73, 72, 68, 82, 0, 0, 0, 64, 0,
+    0, 0, 64, 8, 6, 0, 0, 0, 170, 105, 113, 222, 0, 0, 0, 9, 112, 72, 89, 115, 0,
+    0, 46, 35, 0, 0, 46, ...>>}
+```
+
+```elixir
+iex(1)> KritaEx.valid_kra?("test/files/test.kra")
+true
+
+iex(2)> KritaEx.valid_kra?("test/files/invalid.kra")
+false
 ```
