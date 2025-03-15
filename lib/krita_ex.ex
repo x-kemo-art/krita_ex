@@ -127,6 +127,7 @@ defmodule KritaEx do
     case :zip.list_dir(kra_path) do
       {:ok, _} = resp -> resp
       {:error, :bad_eocd} -> {:error, :invalid_kra}
+      {:error, :einval} -> {:error, :invalid_kra}
       {:error, errcode} -> {:error, {:failed_read, errcode}}
     end
   end
