@@ -29,6 +29,6 @@ iex(1)> KritaEx.read_png("./priv/test.kra")
 ```
 
 ```elixir
-iex(1)> KritaEx.extract_png("./test/test.kra", "./tmp/output.png")
+iex(1)> KritaEx.extract_png("./priv/test.kra", "./tmp/output.png")
 :ok
 ```
