@@ -1,6 +1,8 @@
 defmodule KritaEx.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/x-kemo-art/krita_ex"
+
   def project do
     [
       app: :krita_ex,
@@ -11,8 +13,20 @@ defmodule KritaEx.MixProject do
 
       # Docs
       name: "KritaEx",
-      source_url: "https://github.com/x-kemo-art/krita_ex",
-      docs: &docs/0
+      description: "A module for extracting embedded images from Krita .kra files",
+      source_url: @source_url,
+      docs: docs(),
+      package: package()
+    ]
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"],
+      maintainers: ["x_kemo"],
+      links: %{
+        "GitHub" => @source_url
+      }
     ]
   end
 

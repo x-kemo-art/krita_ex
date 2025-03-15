@@ -1,6 +1,9 @@
 # KritaEx
 
-**TODO: Add description**
+[![Hex.pm](https://img.shields.io/hexpm/v/krita_ex.svg)](https://hex.pm/packages/krita_ex) 
+[![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/krita_ex)
+
+A module for extracting embedded images from Krita .kra files
 
 ## Installation
 
@@ -15,7 +18,17 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/krita_ex>.
+## Usage
 
+```elixir
+iex(1)> KritaEx.read_png("./priv/test.kra")
+{:ok,
+<<137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 13, 73, 72, 68, 82, 0, 0, 9, 196,
+  0, 0, 9, 196, 8, 6, 0, 0, 0, 46, 115, 245, 61, 0, 0, 0, 9, 112, 72, 89, 115,
+  0, 0, 46, 35, 0, 0, 46, ...>>}
+```
+
+```elixir
+iex(1)> KritaEx.extract_png("./test/test.kra", "./tmp/output.png")
+:ok
+```
